@@ -51,6 +51,7 @@ vector<int> TopoBfs(int V,vector<vector<int>> &edges)
             }
         }
     }
+    //if res.size()==V then it is a DAG else cycle present
     return res;
 
 }
