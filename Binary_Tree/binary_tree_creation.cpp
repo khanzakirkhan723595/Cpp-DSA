@@ -70,9 +70,55 @@ Node *BinaryTree()
     temp->right=BinaryTree();
     return temp; //return address
 }
+
+//Traversal
+//Preorder
+void Preorder(Node *root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    cout<<root->data<<" ";
+    Preorder(root->left);
+    Preorder(root->right);
+}
+//Inorder
+void Inorder(Node *root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    Inorder(root->left);
+    cout<<root->data<<" ";
+    Inorder(root->right);
+}
+//Postorder
+void Postorder(Node *root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    Postorder(root->left);
+    Postorder(root->right);
+    cout<<root->data<<" ";
+}
+
 int main()
 {
     cout<<"Enter root of Binary Tree: "<<endl;
     Node *root;
     root=BinaryTree();
+
+    cout<<"Preorder : ";
+    Preorder(root);
+    cout<<endl;
+    cout<<"Inorder : ";
+    Inorder(root);
+    cout<<endl;
+    cout<<"Postorder : ";
+    Postorder(root);
+    return 0;
 }
