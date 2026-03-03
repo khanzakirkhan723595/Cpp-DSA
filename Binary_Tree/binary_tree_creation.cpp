@@ -15,8 +15,9 @@ class Node{
         }
 };
 
+//method 1 by using queue
 
-int main()
+/*int main()
 {
     int x;
     cout<<"Enter the root: "<<endl;
@@ -47,4 +48,31 @@ int main()
     
 
     return 0;
+}*/
+
+
+//method 2 using recursion
+Node *BinaryTree()
+{
+    int x;
+    cin>>x;
+    if(x==-1)
+    {
+        return NULL;
+
+    }
+    Node *temp=new Node(x);
+    //left child
+    cout<<"Enter left of "<<temp->data<<" : "<<endl;
+    temp->left=BinaryTree();
+    //right child
+    cout<<"Enter right of "<<temp->data<<" : "<<endl;
+    temp->right=BinaryTree();
+    return temp; //return address
+}
+int main()
+{
+    cout<<"Enter root of Binary Tree: "<<endl;
+    Node *root;
+    root=BinaryTree();
 }
